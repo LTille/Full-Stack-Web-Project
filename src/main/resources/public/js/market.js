@@ -39,12 +39,12 @@ $(function(){
 //---------------------------------------------------------------------------------------------
 //add hint when mouse is on the scroll news
 $(function(){
-        var x = 10;  
+        var x = 10;
 	var y = 20;
 	$("a.tooltip").mouseover(function(e){
        	this.myTitle = this.title;
-		this.title = "";//use this to solute the problem that the title attribute 
-                                //in the img will also appear	
+		this.title = "";//use this to solute the problem that the title attribute
+                                //in the img will also appear
 	    var tooltip = "<div id='tooltip'>"+ this.myTitle +"</div>"; //create new div element
 		$("body").append(tooltip);	//append it to the document
 		$("#tooltip")
@@ -52,9 +52,9 @@ $(function(){
 				"top": (e.pageY+y) + "px",//e.pageY use get the top position of mouse pointer
 				"left": (e.pageX+x)  + "px"//e.pageX use get the left position of mouse pointer
 			}).show("fast");	  //set the coordinate and show it
-    }).mouseout(function(){		
+    }).mouseout(function(){
 		this.title = this.myTitle;
-		$("#tooltip").remove();   
+		$("#tooltip").remove();
     }).mousemove(function(e){
 		$("#tooltip")
 			.css({
@@ -251,7 +251,7 @@ $(function(){
  var errorMsg;
 
 	if($(this).is('#username')){
-            
+
               //implement after collection database
 		if(this.value===""){
 			errorMsg='User Name already exists';
@@ -264,12 +264,12 @@ $(function(){
 			$parent.append('<span class="formtips onError">'+errorMsg+'</span>');
                 }
 	}
-       
+
        if($(this).is('#cpassword')){
                 if ($('#password').attr('value') !== $(this).attr('value')) {
                         errorMsg='Password not the same';
 	               $parent.append('<span class="formtips onError">'+errorMsg+'</span>');
-                 } 
+                 }
         }
 }).keyup(function(){
    $(this).triggerHandler("blur");
@@ -282,12 +282,12 @@ $(function(){
 $(function(){
 	    var $div_li =$("div.tab_menu ul li");
 	    $div_li.click(function(){
-			$(this).addClass("selected")            
-				   .siblings().removeClass("selected");  
-            var index =  $div_li.index(this);  
-			$("div.tab_box > div")   	
-					.eq(index).show()   
-					.siblings().hide(); 
+			$(this).addClass("selected")
+				   .siblings().removeClass("selected");
+            var index =  $div_li.index(this);
+			$("div.tab_box > div")
+					.eq(index).show()
+					.siblings().hide();
 		}).hover(function(){
 			$(this).addClass("hover");
 		},function(){
