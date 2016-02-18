@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My profile</title>
+        <link rel="stylesheet" href="styles/base.css" type="text/css"/>
+        <link rel="stylesheet" href="styles/profile.css" type="text/css"/>
+        <script src="scripts/jquery-1.3.1.js"></script>
+        <script src="scripts/market.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+       $(function(){
+         $("#header").load("header.html");
+       });
+       </script>
+    </head>
+    <body>
+       <div id="header"></div>
+       <div class="tab">
+				<div class="tab_menu">
+					<ul>
+                                            <li class="selected">My ads</li>
+                                            <li>Message</li>
+                                            <li>Mark item</li>
+                                            <li>My Profile</li>
+					</ul>
+				</div>
+				<div class="tab_box">
+					<div> 
+                                            <p>You currently have 0 ads</p>
+                                            <div id="adPost">
+                                                <div id="post">
+                                                <a href="publish.html">Post an ad</a>
+                                                </div>
+                                            </div>
+					</div>
+					<div class="hide">
+					   Message box is empty
+                                        </div>
+					<div class="hide">
+					  You haven't mark any item
+					</div>
+                                        <div class="hide">
+					  
+                                           
+                                           
+					</div>
+				</div>
+        </div>
+    </body>
+</html>

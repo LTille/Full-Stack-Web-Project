@@ -1,0 +1,109 @@
+
+#content{
+	border:1px solid #AAA;
+	margin:10px auto;
+    width:800px;
+}
+.global_module h3 { 
+	height:26px; 
+	background:#3B5998;
+	color:#FFF; 
+	line-height:26px; 
+	text-indent:6px;
+}
+.pro_detail { 
+	width:780px; 
+	height:auto;
+	overflow:hidden; 
+	padding:10px;
+}
+/*left-hand side css*/
+.pro_detail_left { 
+	width:380px;
+	float:left;
+	overflow:hidden;
+}
+.product--title {
+  color: #008080;
+  font-weight: bold;
+  font-size: 2em;
+  font-family: serif;
+  padding: 20px 0;
+  text-align: center;
+}
+.product--title h2 {
+  display: inline-block;
+  border-bottom: 2px dashed;
+}
+
+.pro_detail_left span { 
+	display:block;
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:10px;
+	width:310px;
+	clear:both; 
+}
+.pro_detail_left span a:hover{ 
+	text-decoration:none;
+}
+
+/*right-hand side css*/
+.pro_detail_right { 
+	width:380px;  
+	float:left; 
+	margin:10px;
+}
+
+.pro_detail_right h1{
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: serif;
+  text-align: left;
+}
+.pro_detail_right p{
+  font-size: 1.2em;
+  font-family: serif;
+}
+
+
+.product_price .price {
+  font-size: 1.5em;
+  padding-right: 10px;
+}
+.product_price .offer {
+  color: indianred;
+  border: 1px solid #952e2e;
+  border-radius: 5px 5px;
+  padding: 1px 3px;
+  font-size: 1em;
+}
+.add-to-cart {
+  margin: 10px 10px 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  background: none;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+.btn.btn_cart {
+  border: 1px solid indianred;
+  border-radius: 4px;
+  padding: 3px 30px 3px 5px;
+  box-shadow: 0px 0px 3px 0px indianred;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  font-size: 1.5em;
+}
+
+.btn.btn_cart:hover, .btn.btn_cart:focus {
+  background: indianred;
+  color: #fff;
+  text-shadow: 2px 2px 3px #666;
+  transition: all .4s;
+}
+

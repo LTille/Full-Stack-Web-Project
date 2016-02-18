@@ -1,0 +1,159 @@
+#logo a{
+    font-size: 24px;
+    color:white;
+    padding: 10px;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 100px;
+    text-decoration: none;
+}
+
+#navigation{
+    background-color: #1f253d;
+    display:block;
+    padding: 5px;
+    height: 60px;
+}
+
+#navigation ul {
+    font-size: 15px;
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    background-color: #333;
+    margin-right: 80px;
+}
+
+#navigation ul li {
+    float: right;
+    position: relative;
+}
+
+.publish_pin{
+    position: absolute;
+    top: -2px;
+    right: 120px;
+    cursor: pointer;
+}
+
+.drop_down{
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    cursor: pointer;
+}
+
+#navigation li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navigation li a:hover, .dropdown:hover .dropbtn {
+    background-color: #111;
+}
+
+#navigation .dropdown {
+    display: inline-block;
+}
+
+#navigation .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+#navigation .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#navigation .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+#navigation .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* login in css The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.login-wrap {
+    position: relative;
+    margin: 0 auto;
+    background: #ecf0f1;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #333;
+    padding: 15px;
+}
+.login-wrap h2 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 2em;
+    margin-top: 10px;
+    color: #34495e;
+}
+.login-wrap .form {
+    padding-top: 20px;
+}
+.login-wrap .form input[type="text"],
+.login-wrap .form input[type="password"],
+.login-wrap .form button {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 25px;
+    height: 40px;
+    border-radius: 5px;
+    outline: 0;
+    -moz-outline-style: none;
+}
+
+.login-wrap .form input[type="text"],
+.login-wrap .form input[type="password"] {
+    border: 1px solid #bbb;
+    padding: 0 0 0 10px;
+    font-size: 14px;
+}
+.login-wrap .form input[type="text"]:focus,
+.login-wrap .form input[type="password"]:focus {
+    border: 1px solid #3498db;
+}
+
+
+.login-wrap .form button {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: box-shadow .4s ease;
+}
+.login-wrap .form button:hover {
+    box-shadow: 1px 1px 5px #555;
+}
+.login-wrap .form button:active {
+    box-shadow: 1px 1px 7px #222;
+}
+

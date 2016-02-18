@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles/base.css" type="text/css"/>
+        <link rel="stylesheet" href="styles/detail.css" type="text/css"/>
+        <script src="scripts/jquery-1.3.1.js"></script>
+        <script src="scripts/market.js"></script>
+        <title>Publish new item</title>
+        <script>
+            $(function () {
+                $("#header").load("header.html");
+            });
+        </script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div id="content" class="global_module">
+            <div class="product--title">
+                <h2>Table Posted by Sara</h2>
+            </div>
+            <div class="pro_detail">
+                <div class="pro_detail_left">
+                    <span>
+
+                        <img alt="" src="images/ads/2.jpeg" />
+
+                    </span>
+                </div>
+                <div class="pro_detail_right">
+                    <h1>Item Description</h1>
+                    <p>This is a awesome product.Good for study</p>
+                    <div class="product_price">
+                        <span class="price">Price: $40</span>
+                        <span class="offer">Delivery Offered!</span>
+                    </div>
+                    <div id="add-to-cart">
+                         <button class="btn btn_cart">Mark it!</button>
+                        <a href="#">Contact Information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

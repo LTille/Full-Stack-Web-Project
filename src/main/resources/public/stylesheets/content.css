@@ -1,0 +1,616 @@
+/*Home page css*/
+/*search bar*/
+#searchBar {
+    background-color:#eeeeee;
+    height: 90px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+ *{
+    box-sizing: border-box;
+}
+
+#searchBar form {
+    margin: auto;
+}
+
+.search_bar {
+    background: #fff;
+    border: #b7b7b7 solid 1px;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #ccc;
+    position: relative;
+    font-family: Arial;
+    max-width: 420px;
+}
+.search_bar input[type=text] {
+    border: none;
+    box-shadow: none;
+    font-weight: 600;
+    font-size: 14px;
+    width: 80%;
+    padding: .5em;
+    margin: 0;
+    overflow: hidden;
+}
+.search_bar input[type=text]:focus {
+    outline: none;
+}
+.search_bar button[type=submit] {
+    background: -webkit-linear-gradient(#237cd4, #1e6ab5);
+    background: linear-gradient(#237cd4, #1e6ab5);
+    color: rgba(255, 255, 255, 0);
+    border: 1px solid #1C62A8;
+    width: 10%;
+    min-width: 56px;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 0 3px 3px 0;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.search_bar button[type=submit]:after {
+    content: '';
+    position: absolute;
+    top: 18%;
+    right: 0;
+    bottom: 22%;
+    left: 4%;
+    background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg") no-repeat center center;
+    background-size: contain;
+}
+.search_bar button[type=submit]:hover, .search_bar button[type=submit]:focus {
+    background: -webkit-linear-gradient(#3388dd, #2174c7);
+    background: linear-gradient(#3388dd, #2174c7);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.search_bar .search_dropdown {
+    font-weight: 600;
+    min-width: 17px;
+    background: -webkit-linear-gradient(#f4f4f4, #e2e2e2);
+    background: linear-gradient(#f4f4f4, #e2e2e2);
+    border-right: 1px solid #ddd;
+    color: #555;
+    padding: 0 28px 0 13px;
+    border-radius: 2px 0 0 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-sizing: content-box;
+}
+.search_bar .search_dropdown:after {
+    content: "\2193";
+    color: rgba(85, 85, 85, 0);
+    background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+    height: 8px;
+    width: 10px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -6px;
+}
+.search_bar .search_dropdown:hover, .search_bar .search_dropdown.active {
+    background: -webkit-linear-gradient(#e7e7e7, #d5d5d5);
+    background: linear-gradient(#e7e7e7, #d5d5d5);
+    cursor: pointer;
+    border-right-color: #ccc;
+}
+.search_bar .search_dropdown > span {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    white-space: nowrap;
+    font-size: 15px;
+}
+.search_bar .search_dropdown ul {
+    display: none;
+    position: absolute;
+    top: 105%;
+    left: -1px;
+    font-size: 14px;
+    width: 225px;
+    background: #fff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 7px 0;
+}
+.search_bar .search_dropdown li {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 18px;
+    color: #1C62A8;
+    line-height: 1.2em;
+    position: relative;
+}
+.search_bar .search_dropdown li:hover {
+    background: #e7e7e7;
+}
+.search_bar .search_dropdown li.selected {
+    background: #1C62A8;
+    color: #fff;
+}
+.search_bar.huge {
+    max-width: 860px;
+}
+.search_bar.huge input[type=text] {
+    font-size: 21px;
+}
+.search_bar ::-webkit-input-placeholder {
+    font-weight: 400;
+}
+.search_bar ::-moz-placeholder {
+    font-weight: 400;
+}
+.search_bar :-ms-input-placeholder {
+    font-weight: 400;
+}
+.search_bar ::placeholder {
+    font-weight: 400;
+}
+
+/*left part of web content*/
+.content_left{
+  width: 250px;
+  float:left;
+  margin-left: 20px;
+  margin-right:10px;
+  background:#eee;
+  border: 1px solid #AAAAAA;
+}
+
+.global_module{
+	position: relative;
+        background: #EEEEEE;
+	padding-bottom: 8px;
+}
+
+.module_up_down{
+	position: absolute;
+	top: 3px;
+	right: 5px;
+	cursor: pointer;
+}
+.global_module h3 { 
+	height:26px; 
+	background:#6699CC ;
+	color:#FFF; 
+	line-height:26px; 
+	text-indent:6px;
+        font-size: 1.2em;
+}
+
+.content_left .news ul { 
+	padding:5px 0 5px 15px; 
+}
+.content_left .procatalog ul { 
+	padding:5px 0 5px 15px; 
+}
+
+.content_left .scrollNews{
+        width:250px;
+	height:150px;
+	line-height:20px;
+	overflow:hidden;/*in updating news, the new one will not exceed this area*/
+	background:#FFFFFF;
+}
+
+.content_left .scrollNews li{
+	height:20px;
+}
+
+.procatalog .m-treeview{
+    background:#FFFFFF;
+}
+
+.procatalog .m-treeview li span {
+    cursor: pointer;
+}
+
+/*css for expanding*/
+.procatalog .m-treeview li.m-expanded{
+  padding-left: 16px;
+  background: url('../images/treeview-expanded.png') no-repeat ;
+}
+
+.procatalog .m-treeview li.m-expanded ul li{
+  list-style-image: url('../images/treeview-item.png');
+}
+
+/*css for collapsing*/
+.procatalog .m-treeview li.m-collapsed{
+  padding-left: 16px;
+  background: url('../images/treeview-collapsed.png') no-repeat;
+}
+
+/*right part of web content*/
+.content_right{
+	width: 970px;
+	float: left;
+}
+
+.content_right .ad{
+	width: 970px;
+	height: 180px;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid #CCCCCC;
+        margin-bottom: 10px;
+        
+}
+
+.content_right .slider, .content_right .num{
+	position: absolute;
+}
+
+.content_right .slider li{
+    list-style: none;
+    display: inline;
+}
+
+.content_right .slider img{
+    width: 970x;
+    height:200px;
+    display: block;
+}
+
+.content_right .num{
+	right: 5px;
+	bottom: 5px;
+}
+
+.content_right .num li{
+	float: left;
+        color:#FF7300;
+        text-align: center;
+        line-height: 16px;
+	margin-right: 4px;
+	width: 16px;
+        height:16px;
+        font-family: Arial;
+        font-size: 1em;
+	overflow: hidden;
+        margin:3px 1px;
+	cursor: pointer;	
+	border: 1px solid #CCCCCC;
+        background-color: #fff;
+}
+.content_right .num li.on{
+	color: #fff;
+	line-height: 21px;
+	width: 21px;
+	height: 21px;
+	font-size: 1.1em;
+	margin: 0 1px;
+	border: 0;
+	background-color: #3399CC;
+	font-weight: bold;
+}
+
+.content_right .prolist{
+	position: relative;
+	height: 400px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	border: 1px solid #AAAAAA;
+	background: #FFFFFF;
+}
+.content_right .prolist .prolist_content{
+	position: absolute;
+	width: 1800px;
+	top: 26px;
+	left:0px;
+	padding: 20px 0 0 8px;
+}
+
+.module_left_right{
+	position: absolute;
+	top:5px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.content_right .prolist ul li{
+	float: left;
+	display: inline;
+	text-align: center;
+	margin-right: 22px;
+}
+
+.content_right .prolist ul li span { 
+        display: block;
+	overflow:hidden; /*To set this parameter*/
+}
+
+.content_right .prolist ul li img { 
+        display: block;
+	width:124px; 
+	height:124px; 
+	background:#EEE; border:0;
+}
+
+/* tooltip */
+#tooltip{
+	position:absolute;
+	border:1px solid #333;
+	background:#f7f5d1;
+	padding:1px;
+	color:#333;
+	display:none;
+}
+
+footer{
+        clear:both;
+	display: block;
+	background-color: #888888 ;
+	color: #eee;
+	text-align: center;
+	padding: 15px;
+}
+
+footer h2{
+	font-size: 14px;
+	color: white;
+}
+/*register page css*/
+
+#registration-form {
+  font-family: Arial;
+  width: 400px;
+  min-width: 250px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#registration-form .fieldset {
+  background-color: #d5d5d5;
+  border-radius: 3px;
+}
+
+#registration-form #legend {
+  text-align: center;
+  background: #364351;
+  width: 100%;
+  padding: 30px 0;
+  border-radius: 3px 3px 0 0;
+  color: white;
+  font-size: 2em;
+}
+
+.fieldset form {
+  border: 1px solid #2f2f2f;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  border-radius: 0 0 3px 3px;
+}
+
+.placeholder #registration-form label {
+  display: none;
+}
+
+#registration-form input {
+  padding: 15px 20px;
+  border-radius: 1px;
+  margin: 5px auto;
+  background-color: #f7f7f7;
+  border: 1px solid silver;
+  width: 100%;
+ }
+
+#registration-form input[type=submit] {
+  font-family: Arial;
+  text-transform: uppercase;
+  outline: none;
+  width: 100%;
+  background-color: #5C8CA7;
+  padding: 10px;
+  color: white;
+  border: 1px solid #3498db;
+  border-radius: 3px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 5px;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+}
+
+#registration-form input[type=submit]:hover {
+  background-color: #2980b9;
+}
+
+#registration-form input[type=submit]:active {
+  background: #5C8CA7;
+}
+
+#registration-form select {
+  width: 100%;
+  padding: 5px;
+}
+
+#registration-form .onError{
+    color:red;
+}
+
+/* publish css*/
+ #publish {
+  font-family: Arial;
+  width: 700px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#publish #legend {
+  text-align: center;
+  background: #364351;
+  width: 100%;
+  padding: 30px 0;
+  color: white;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+#publish div{
+    margin-bottom: 20px;
+}
+
+#publish label{
+    font-family: Arial;
+    font-size: 1.5em;
+    margin-bottom:0px;
+    padding: 10px;
+    background:#CCCCCC;
+}
+
+#publish  input {
+  padding: 15px 20px;
+  margin: 5px auto;
+  background-color: #f7f7f7;
+  border: 1px solid silver;
+  width: 100%;
+  font-size: 1.5em;
+ 
+}
+#publish  textarea {
+  padding: 15px 20px;
+  margin: 5px auto;
+  background-color: #f7f7f7;
+  border: 1px solid silver;
+  width: 100%;
+  position: relative;
+  font-size: 1.5em;
+}
+
+#publish  input[type=submit] {
+  font-family: Arial;
+  width: 100%;
+  background-color: #5C8CA7;
+  padding: 10px;
+  color: white;
+  border: 1px solid #3498db;
+  border-radius: 3px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 5px;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+}
+
+#publish  input[type=submit]:hover {
+  background-color: #2980b9;
+}
+
+#publish  input[type=submit]:active {
+  background: #5C8CA7;
+}
+
+#publish  select {
+  width: 100%;
+  padding: 5px;
+}
+
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #eee;
+  position: relative;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  color: #15824B;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  outline: none;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+}
+
+
+#publish .contact li { 
+	display: inline-block;
+	text-align:center; 
+	cursor:pointer; 
+	list-style:none; 
+	padding:10px;
+	margin-right:100px; 
+	border-bottom:none;
+}
+
+
+#publish #delivery li { 
+	display: inline-block;
+	text-align:center; 
+	cursor:pointer; 
+	list-style:none; 
+	padding:10px;
+	margin-right:100px; 
+	border-bottom:none;
+}

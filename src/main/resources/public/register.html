@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+    <script src="scripts/jquery-1.3.1.js"></script>
+    <script src="scripts/market.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <title> Flea Market</title>
+    <script>
+   $(function(){
+     $("#header").load("header.html");
+   });
+   </script>
+</head>
+<body style="background-color: #666699  ;">
+    <div id="header"></div>
+    <div id="registration-form">
+        <div class='fieldset'>
+            <div id='legend'>Wanna be Saver?!</div>
+            <form action="#" method="post" data-validate="parsley">
+                <div class='row'>
+                    <label>User Name </label>
+                    <input type="text" placeholder="User Name" name='username' id='username' data-required="true">
+                </div>
+                <div class='row'>
+                    <label>E-mail</label>
+                    <input type="text" placeholder="E-mail"  name='email' id='email' data-required="true">
+                </div>
+                <div class='row'>
+                    <label>Password</label>
+                    <input type="password" placeholder="Password" name='pasword' id='password' data-required="true">
+                </div>
+                <div class='row'>
+                    <label>Confirm your password</label>
+                    <input type="password" placeholder="Confirm your password" name='cpassword' id='cpassword' data-required="true">
+                </div>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
