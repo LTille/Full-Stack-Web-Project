@@ -11,6 +11,18 @@
             $(function () {
                 $("#header").load("header.html");
             });
+
+            $(function () {
+              $.ajax({
+                url: "/api/detail/info",
+                success: function (result) {
+                  var data = JSON.parse(result);
+                  $(".pro_detail_right p").html(data.description);
+                  $(".price").html(data.price);
+                  $(".offer").html(data.offer);
+                  $("#add-to-cart a").html(data.contact);
+                }});
+              });
         </script>
     </head>
     <body>
@@ -38,20 +50,6 @@
                         <div><a href="/contact"></a></div>
                     </div>
                 </div>
-
-                <script>
-                    $(function () {
-                        $.ajax({
-                            url: "/api/detail/info",
-                            success: function (result) {
-                                var data = JSON.parse(result);
-                                $(".pro_detail_right p").html(data.description);
-                                $(".price").html(data.price);
-                                $(".offer").html(data.offer);
-                                $("#add-to-cart a").html(data.contact);
-                            }});
-                    });
-                </script>
                 <!-- <script>
                     $(function () {
                         $.ajax({

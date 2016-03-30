@@ -124,27 +124,23 @@
 		</div>
     </div>
   <script>
-    $(function () {
-        $.ajax({
-            type: "GET",
-            url: "/api/searchXML",
-            dataType: "xml",
-            success: xmlParser
-        });
-      })
-  });
+    $(document).ready(function () {
+    $.ajax({
+        type: "GET",
+        url: "https://desolate-thicket-4106.herokuapp.com/api/productXML",
+        dataType: "xml",
+        success: xmlParser
+    });
+});
 
   function xmlParser(xml) {
 
-      $('#load').fadeOut();
-
       $(xml).find("Item").each(function () {
 
-          $(".prolist_content ul").append('<li><a href="detail.html"><img' + $(this).find("Images").text() + 'alt=" "/></a><span>'
-          + $(this).find("AdTitle").text()+'</span><span>'+$(this).find("Price")+'</span></li>');
-          $(".book").fadeIn(1000);
-      });
+          $(".prolist_content ul").append('<li><a href="detail.html"><img src="'+$(this).find("Images").text()+'" alt=""/></a><span>'+$(this).find("AdTitle").text()+'</span><span> $'+$(this).find("Price").text()+'</span></li>');
 
+      });
+   }
   </script>
 	<div class="content_right">
   		<div class="global_module prolist">

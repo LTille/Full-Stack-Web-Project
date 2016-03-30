@@ -90,22 +90,22 @@ public class ServerRoute {
                   return new ModelAndView(attributes, "searchResult.ftl");
               }, new FreeMarkerEngine());
 
-      // get("/api/searchXML", (req, res) -> {
-      //   String xml =    "<?xml version=\"1.0\" encoding=\"utf-8\"?>"+
-      //                     "<Item>"+
-      //                       "<Category>Motor</Category>"+
-      //                       "<Delivery>no</Delivery>"+
-      //                       "<Address>734 broughton street PA15213</Address>"+
-      //                       "<AdTitle>One year used car Sale</AdTitle>"+
-      //                       "<Images>images/ads/1.jpeg</Images>"+
-      //                       "<Description>It was bought one year ago with great engine</Description>"+
-      //                       "<Price>10000</Price>"+
-      //                       "<Telephone>4124445559</Telephone>"+
-      //                       "<Contact>abc123@hotmail.com</Contact>"+
-      //                     "</Item>";
-      //   res.type("text/xml");
-      //   return xml;
-      // });
+      get("/api/searchXML", (req, res) -> {
+        String xml =    "<?xml version=\"1.0\" encoding=\"utf-8\"?>"+
+                          "<Item>"+
+                            "<Category>Motor</Category>"+
+                            "<Delivery>no</Delivery>"+
+                            "<Address>734 broughton street PA15213</Address>"+
+                            "<AdTitle>One year used car Sale</AdTitle>"+
+                            "<Images>images/ads/6.jpg</Images>"+
+                            "<Description>It was bought one year ago with great engine</Description>"+
+                            "<Price>10000</Price>"+
+                            "<Telephone>4124445559</Telephone>"+
+                            "<Contact>abc123@hotmail.com</Contact>"+
+                          "</Item>";
+        res.type("text/xml");
+        return xml;
+      });
 
       get("/contact", (request, response) -> {
                   Map<String, Object> attributes = new HashMap<>();
@@ -120,7 +120,7 @@ public class ServerRoute {
       }, new FreeMarkerEngine());
 
 
-      get("/api/searchXML", (req, res) -> {
+      get("/api/productXML", (req, res) -> {
             Connection connection = null;
             res.type("application/xml"); //Return as XML
             res.header("Access-Control-Allow-Origin", "https://desolate-thicket-4106.herokuapp.com");
@@ -220,5 +220,6 @@ public class ServerRoute {
       //         res.type("text/xml");
       //         return xml;
       //   });
+
   }
 }
