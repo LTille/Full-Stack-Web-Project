@@ -6,7 +6,7 @@
     <Delivery>no</Delivery>
     <Address>734 broughton street PA15213</Address>
     <AdTitle>One year used car Sale</AdTitle>
-    <Images>images/ads/1.jpeg</Images>
+    <Images>images/ads/6.jpg</Images>
     <Description>It was bought one year ago with great engine</Description>
     <Price>10000</Price>
     <Telephone>4124445559</Telephone>
@@ -28,7 +28,7 @@
     <Delivery>yes</Delivery>
     <Address>100 Morewood avenue PA15213</Address>
     <AdTitle>MySQL Database Book</AdTitle>
-    <Images>images/ads/3.jpeg</Images>
+    <Images>images/ads/7.jpg</Images>
     <Description>Brush up your knowledge with the best MySQL database book on the market.</Description>
     <Price>10</Price>
     <Telephone>4122225558</Telephone>

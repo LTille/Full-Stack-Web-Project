@@ -25,7 +25,6 @@ import spark.template.freemarker.FreeMarkerEngine;
 import spark.ModelAndView;
 import com.heroku.sdk.jdbc.DatabaseUrl;
 
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -78,7 +77,7 @@ public class ServerRoute {
 
     //respond to post json request from client
     post("/regProcess", (req, res) -> {
-         Connection connection = null;
+          Connection connection = null;
           //**Testing**
           System.out.println(req.body());
         try {
@@ -100,10 +99,8 @@ public class ServerRoute {
          System.out.println(email);
          System.out.println(password);
 
-         res.status(200);
          return req.body();
         } catch (Exception e) {
-          res.status(500);
           return e.getMessage();
         } finally {
 
