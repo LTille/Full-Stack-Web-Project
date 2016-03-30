@@ -6,7 +6,6 @@
   <script src="https://code.jquery.com/jquery-1.3.1.min.js"></script>
   <script src="js/market.js"></script>
   <title> Flea Market</title>
-
 </head>
 <body>
     <div id="navigation">
@@ -60,7 +59,7 @@
             </ul>
         </div>
    <div id="searchBar">
-    <form action="/searchResult" class="search_bar huge">
+    <form class="search_bar huge">
         <div class="search_dropdown" style="width: 16px;">
            <span>All</span>
            <ul>
@@ -71,7 +70,7 @@
            </ul>
         </div>
        <input type="text" placeholder="I am looking for......" />
-       <button type="submit" value="Search">Search</button>
+       <button type="submit" value="Search" id="search">Search</button>
     </form>
 </div>
 
@@ -124,42 +123,34 @@
 			<p class="module_up_down"><img src="images/down.png" alt="" /></p>
 		</div>
     </div>
+  <script>
+    $(function () {
+        $.ajax({
+            type: "GET",
+            url: "/api/searchXML",
+            dataType: "xml",
+            success: xmlParser
+        });
+      })
+  });
+
+  function xmlParser(xml) {
+
+      $('#load').fadeOut();
+
+      $(xml).find("Item").each(function () {
+
+          $(".prolist_content ul").append('<li><a href="detail.html"><img' + $(this).find("Images").text() + 'alt=" "/></a><span>'
+          + $(this).find("AdTitle").text()+'</span><span>'+$(this).find("Price")+'</span></li>');
+          $(".book").fadeIn(1000);
+      });
+
+  </script>
 	<div class="content_right">
-		<div class="ad" >
-			 <ul class="slider" >
-				<li><img alt="" src="images/ads/1.jpeg"/></li>
-				<li><img alt="" src="images/ads/2.jpeg"/></li>
-				<li><img alt="" src="images/ads/3.jpeg"/></li>
-				<li><img alt="" src="images/ads/4.jpeg"/></li>
-				<li><img alt="" src="images/ads/5.jpeg"/></li>
-			  </ul>
-			  <ul class="num" >
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>
-				<li>5</li>
-			  </ul>
-		</div>
   		<div class="global_module prolist">
-			<h3>Products</h3>
+			<h3>Search Result</h3>
             <div  class="prolist_content">
                 <ul>
-                    <li>
-                        <a href="detail.html"><img src="images/ads/1.jpeg" alt="" /></a><span>Sofa</span><span>$40.00</span>
-                    </li>
-                    <li>
-                        <a href="detail.html"><img src="images/ads/2.jpeg" alt="" /></a><span>Table</span><span>$25.00</span>
-                    </li>
-                    <li>
-                        <a href="detail.html"><img src="images/ads/3.jpeg" alt="" /></a><span>Table</span><span>$120.00</span>
-                    </li>
-                     <li>
-                        <a href="detail.html"><img src="images/ads/4.jpeg" alt="" /></a><span>Chair</span><span>$50.00</span>
-                    </li>
-                    <li>
-                        <a href="detail.html"><img src="images/ads/5.jpeg" alt="" /></a><span>Table</span><span>$10.00</span>
-                    </li>
                 </ul>
             </div>
           </div>

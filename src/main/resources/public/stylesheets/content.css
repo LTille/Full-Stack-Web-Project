@@ -184,20 +184,20 @@
 	right: 5px;
 	cursor: pointer;
 }
-.global_module h3 { 
-	height:26px; 
+.global_module h3 {
+	height:26px;
 	background:#6699CC ;
-	color:#FFF; 
-	line-height:26px; 
+	color:#FFF;
+	line-height:26px;
 	text-indent:6px;
         font-size: 1.2em;
 }
 
-.content_left .news ul { 
-	padding:5px 0 5px 15px; 
+.content_left .news ul {
+	padding:5px 0 5px 15px;
 }
-.content_left .procatalog ul { 
-	padding:5px 0 5px 15px; 
+.content_left .procatalog ul {
+	padding:5px 0 5px 15px;
 }
 
 .content_left .scrollNews{
@@ -249,7 +249,7 @@
 	position: relative;
 	border: 1px solid #CCCCCC;
         margin-bottom: 10px;
-        
+
 }
 
 .content_right .slider, .content_right .num{
@@ -284,7 +284,7 @@
         font-size: 1em;
 	overflow: hidden;
         margin:3px 1px;
-	cursor: pointer;	
+	cursor: pointer;
 	border: 1px solid #CCCCCC;
         background-color: #fff;
 }
@@ -330,15 +330,15 @@
 	margin-right: 22px;
 }
 
-.content_right .prolist ul li span { 
+.content_right .prolist ul li span {
         display: block;
 	overflow:hidden; /*To set this parameter*/
 }
 
-.content_right .prolist ul li img { 
+.content_right .prolist ul li img {
         display: block;
-	width:124px; 
-	height:124px; 
+	width:124px;
+	height:124px;
 	background:#EEE; border:0;
 }
 
@@ -353,10 +353,9 @@
 }
 
 footer{
-        clear:both;
+  clear:both;
 	display: block;
 	background-color: #888888 ;
-	color: #eee;
 	text-align: center;
 	padding: 15px;
 }
@@ -484,7 +483,7 @@ footer h2{
   border: 1px solid silver;
   width: 100%;
   font-size: 1.5em;
- 
+
 }
 #publish  textarea {
   padding: 15px 20px;
@@ -594,23 +593,23 @@ footer h2{
 }
 
 
-#publish .contact li { 
+#publish .contact li {
 	display: inline-block;
-	text-align:center; 
-	cursor:pointer; 
-	list-style:none; 
+	text-align:center;
+	cursor:pointer;
+	list-style:none;
 	padding:10px;
-	margin-right:100px; 
+	margin-right:100px;
 	border-bottom:none;
 }
 
 
-#publish #delivery li { 
+#publish #delivery li {
 	display: inline-block;
-	text-align:center; 
-	cursor:pointer; 
-	list-style:none; 
+	text-align:center;
+	cursor:pointer;
+	list-style:none;
 	padding:10px;
-	margin-right:100px; 
+	margin-right:100px;
 	border-bottom:none;
 }

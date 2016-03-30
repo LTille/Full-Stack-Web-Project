@@ -2,12 +2,32 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css"/>
-    <script src="https://code.jquery.com/jquery-1.3.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/market.js"></script>
+    <script src="js/JSON.js"></script>
     <title> Flea Market</title>
     <script>
    $(function(){
      $("#header").load("header.html");
+   });
+
+   $(function(){
+        $("#submit").click(function(){
+         //var json = ConvertFormToJSON($('#regForm'));
+         var send = $('#regForm').serializeJSON();
+         console.log(send);
+         $.ajax({
+         type: 'POST',
+         url: '/regProcess',
+         data: '{"name":"Tillie","email":"tingli@163.com","password":"123","cpassword":"123"}',
+         error: function(xhr, error) {
+            alert('Error!  Status = ' + xhr.status + ' Message = ' + error);},
+         success: function(data) { alert(data+"Register successfully"); },
+         contentType: "application/json",
+         dataType: 'json'
+     });
+      return false;
+     });
    });
    </script>
 </head>
@@ -16,7 +36,7 @@
     <div id="registration-form">
         <div class='fieldset'>
             <div id='legend'>Wanna be Saver?!</div>
-            <form action="#" method="post" data-validate="parsley">
+            <form action="/regProcess" method="post" data-validate="parsley" id="regForm">
                 <div class='row'>
                     <label>User Name </label>
                     <input type="text" placeholder="User Name" name='username' id='username' data-required="true">
@@ -33,7 +53,7 @@
                     <label>Confirm your password</label>
                     <input type="password" placeholder="Confirm your password" name='cpassword' id='cpassword' data-required="true">
                 </div>
-                <input type="submit" value="Register">
+                <input type="submit" value="Register" id="submit">
             </form>
         </div>
     </div>

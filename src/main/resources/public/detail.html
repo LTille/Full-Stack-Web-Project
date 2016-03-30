@@ -17,28 +17,53 @@
         <div id="header"></div>
         <div id="content" class="global_module">
             <div class="product--title">
-                <h2>Table Posted by Sara</h2>
+                <h2>Table for Sale</h2>
             </div>
             <div class="pro_detail">
                 <div class="pro_detail_left">
                     <span>
-
                         <img alt="" src="images/ads/2.jpeg" />
-
                     </span>
                 </div>
+
                 <div class="pro_detail_right">
                     <h1>Item Description</h1>
-                    <p>This is a awesome product.Good for study</p>
+                    <p></p>
                     <div class="product_price">
-                        <span class="price">Price: $40</span>
-                        <span class="offer">Delivery Offered!</span>
+                        Price: <span class="price"></span>
+                        <span class="offer"></span>
                     </div>
                     <div id="add-to-cart">
                          <button class="btn btn_cart">Mark it!</button>
-                        <a href="#">Contact Information</a>
+                        <div><a href="/contact"></a></div>
                     </div>
                 </div>
+
+                <script>
+                    $(function () {
+                        $.ajax({
+                            url: "/api/detail/info",
+                            success: function (result) {
+                                var data = JSON.parse(result);
+                                $(".pro_detail_right p").html(data.description);
+                                $(".price").html(data.price);
+                                $(".offer").html(data.offer);
+                                $("#add-to-cart a").html(data.contact);
+                            }});
+                    });
+                </script>
+                <!-- <script>
+                    $(function () {
+                        $.ajax({
+                            url: "/api/xml",
+                            success: function (result) {
+                              // Append "RSS Title" to #someElement
+                              $( ".pro_detail_right p" ).html($(result).find("Category").text());
+
+                        }});
+                    });
+                </script> -->
+
             </div>
         </div>
     </body>

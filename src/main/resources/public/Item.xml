@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Product xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="Item.xsd">
+  <Item>
+    <Category>Motor</Category>
+    <Delivery>no</Delivery>
+    <Address>734 broughton street PA15213</Address>
+    <AdTitle>One year used car Sale</AdTitle>
+    <Images>images/ads/1.jpeg</Images>
+    <Description>It was bought one year ago with great engine</Description>
+    <Price>10000</Price>
+    <Telephone>4124445559</Telephone>
+    <Contact>abc123@hotmail.com</Contact>
+  </Item>
+  <Item>
+    <Category>House</Category>
+    <Delivery>yes</Delivery>
+    <Address>734 Negly PA15213</Address>
+    <AdTitle>Study table for sale</AdTitle>
+    <Images>images/ads/2.jpeg</Images>
+    <Description>Table bought free Ikea previously</Description>
+    <Price>20</Price>
+    <Telephone>4124445558</Telephone>
+    <Contact>4124445558</Contact>
+  </Item>
+  <Item>
+    <Category>Book</Category>
+    <Delivery>yes</Delivery>
+    <Address>100 Morewood avenue PA15213</Address>
+    <AdTitle>MySQL Database Book</AdTitle>
+    <Images>images/ads/3.jpeg</Images>
+    <Description>Brush up your knowledge with the best MySQL database book on the market.</Description>
+    <Price>10</Price>
+    <Telephone>4122225558</Telephone>
+    <Contact>4122225558</Contact>
+  </Item>
+</Product>
