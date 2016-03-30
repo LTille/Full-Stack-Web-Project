@@ -11,9 +11,21 @@
   <xs:complexType>
     <xs:sequence>
       <xs:element name="Category" type="xs:string"/>
-      <xs:element name="Delivery" type="xs:string"/>
+      <xs:element name="Delivery" type="xs:boolean"/>
       <xs:element name="Address", type="xs:string"/>
+      <xs:simpleType>
+             <xs:restriction base="xs:string">
+             <xs:maxLength value = "35"/>
+             </xs:restriction>
+           </xs:simpleType>
+       </xs:element>
       <xs:element name="AdTitle", type="xs:string"/>
+      <xs:simpleType>
+             <xs:restriction base="xs:string">
+             <xs:maxLength value = "45"/>
+             </xs:restriction>
+           </xs:simpleType>
+       </xs:element>
       <xs:element name="Description", type="xs:string"/>
       <xs:element name="Price", type="xs:postiveInteger"/>
       <xs:element name="Telephone", type="xs:teleType"/>

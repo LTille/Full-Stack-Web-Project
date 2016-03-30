@@ -40,36 +40,6 @@ public class ServerRoute {
 
   private void setupRoutes() {
 
-  post("/regProcess", (req, res) -> {
-     Connection connection = null;
-     Map<String, Object> attributes = new HashMap<>();
-        //**Testing**
-        System.out.println(req.body());
-      try {
-        connection = DatabaseUrl.extract().getConnection();
-        JSONObject obj = new JSONObject(req.body());
-        String username = obj.getString("username");
-        String email = obj.getString("email");
-        String password = obj.getString("password");
-        String cpassword = obj.getString("cpassword");
-
-        Statement stmt = connection.createStatement();
-        stmt.executeUpdate("INSERT INTO student" +
-                      "VALUES('" + username + "', '" + email + "','" + email + "' )");
-
-         //**Testing**
-       System.out.println(username);
-       System.out.println(email);
-       System.out.println(password);
-
-       return req.body();
-      } catch (Exception e) {
-        return e.getMessage();
-      } finally {
-
-      }
-    });
-
   get("/db", (req, res) -> {
     Connection connection = null;
     Map<String, Object> attributes = new HashMap<>();
@@ -96,6 +66,7 @@ public class ServerRoute {
       }
     }, new FreeMarkerEngine());
 
+    //get JSON through API
     get("/api/detail/info", (req, res) -> {
       Map<String, Object> data = new HashMap<>();
       data.put("description", "This is a awesome product. Good for study");
@@ -105,6 +76,41 @@ public class ServerRoute {
       return data;
     }, gson::toJson);
 
+    //respond to post json request from client
+    post("/regProcess", (req, res) -> {
+         Connection connection = null;
+          //**Testing**
+          System.out.println(req.body());
+        try {
+          connection = DatabaseUrl.extract().getConnection();
+          JSONObject obj = new JSONObject(req.body());
+          String username = obj.getString("username");
+          String email = obj.getString("email");
+          String password = obj.getString("password");
+
+          String sql = "INSERT INTO student(username, email, password) VALUES ('"
+                        + username + "','" + email + "','" + password + "')";
+
+          connection = DatabaseUrl.extract().getConnection();
+          Statement stmt = connection.createStatement();
+          stmt.executeUpdate(sql);
+
+           //**Testing**
+         System.out.println(username);
+         System.out.println(email);
+         System.out.println(password);
+
+         res.status(200);
+         return req.body();
+        } catch (Exception e) {
+          res.status(500);
+          return e.getMessage();
+        } finally {
+
+        }
+      });
+
+   //freemarker entering through about me footer in the homepage
     get("/about", (request, response) -> {
       Map<String, Object> attributes = new HashMap<>();
       attributes.put("title", "About Me");
@@ -114,12 +120,27 @@ public class ServerRoute {
       return new ModelAndView(attributes, "about.ftl");
     }, new FreeMarkerEngine());
 
+    //freemaker with conditional judgement from contact name in the detail.html page
+     get("/contact", (request, response) -> {
+       Map<String, Object> attributes = new HashMap<>();
+       attributes.put("title","Contact information");
+       attributes.put("name", "Tillie");
+       attributes.put("address", "734 broughton street PA15213");
+       attributes.put("email", "tingli1101376@gmail.com");
+       attributes.put("phone", "4123764519");
+       attributes.put("delivery", "yes");
+       attributes.put("contact", "phone");
+       return new ModelAndView(attributes, "contact.ftl");
+     }, new FreeMarkerEngine());
+
+    //loading xml with xsd schema from file system and present in freemaker searchResult.ftl
     get("/searchResult", (request, response) -> {
       Map<String, Object> attributes = new HashMap<>();
-      attributes.put("title", "About Me");
+      attributes.put("title", "SearchResult");
       return new ModelAndView(attributes, "searchResult.ftl");
     }, new FreeMarkerEngine());
 
+   //hard code xml file using Stirng
     get("/api/searchXML", (req, res) -> {
         String xml =    "<?xml version=\"1.0\" encoding=\"utf-8\"?>"+
         "<Item>"+
@@ -136,19 +157,6 @@ public class ServerRoute {
       res.type("text/xml");
       return xml;
     });
-
-    get("/contact", (request, response) -> {
-      Map<String, Object> attributes = new HashMap<>();
-      attributes.put("title","Contact information");
-      attributes.put("name", "Tillie");
-      attributes.put("address", "734 broughton street PA15213");
-      attributes.put("email", "tingli1101376@gmail.com");
-      attributes.put("phone", "4123764519");
-      attributes.put("delivery", "yes");
-      attributes.put("contact", "phone");
-      return new ModelAndView(attributes, "contact.ftl");
-    }, new FreeMarkerEngine());
-
 
     get("/api/productXML", (req, res) -> {
       Connection connection = null;
@@ -206,8 +214,6 @@ public class ServerRoute {
         }
       });
 
-
-
       get("/schema/Item/Item.xsd", (req, res) -> {
         Map<String, Object> attributes = new HashMap<>();
         res.type("application/xml"); //Return as XML
@@ -223,35 +229,6 @@ public class ServerRoute {
 
         }
       });//End api/Item.xsd
-
-      // get("/api/xml", (req, res) -> {
-      //         String xml =    "<?xml version=\"1.0\" encoding=\"utf-8\"?>"+
-      //                         "<Product xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"Item.xsd\">"+
-      //                           "<Item>"+
-      //                             "<Category>Motor</Category>"+
-      //                             "<Delivery>no</Delivery>"+
-      //                             "<Address>734 broughton street PA15213</Address>"+
-      //                             "<AdTitle>One year used car Sale</AdTitle>"+
-      //                             "<Images>images/ads/1.jpeg</Images>"+
-      //                             "<Description>It was bought one year ago with great engine</Description>"+
-      //                             "<Price>10000</Price>"+
-      //                             "<Telephone>4124445559</Telephone>"+
-      //                             "<Contact>abc123@hotmail.com</Contact>"+
-      //                           "</Item>"+
-      //                           "<Item>"+
-      //                             "<Category>Motor</Category>"+
-      //                             "<Delivery>no</Delivery>"+
-      //                             "<Address>734 broughton street PA15213</Address>"+
-      //                             "<AdTitle>One year used car Sale</AdTitle>"+
-      //                             "<Images>images/ads/1.jpeg</Images>"+
-      //                             "<Description>It was bought one year ago with great engine</Description>"+
-      //                             "<Price>10000</Price>"+
-      //                             "<Telephone>4124445559</Telephone>"+
-      //                             "<Contact>abc123@hotmail.com</Contact>"+
-      //                           "</Product>";
-      //         res.type("text/xml");
-      //         return xml;
-      //   });
 
     }
   }

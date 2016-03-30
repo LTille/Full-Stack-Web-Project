@@ -2,23 +2,23 @@
 #content{
 	border:1px solid #AAA;
 	margin:10px auto;
-    width:800px;
+  width:800px;
 }
-.global_module h3 { 
-	height:26px; 
+.global_module h3 {
+	height:26px;
 	background:#3B5998;
-	color:#FFF; 
-	line-height:26px; 
+	color:#FFF;
+	line-height:26px;
 	text-indent:6px;
 }
-.pro_detail { 
-	width:780px; 
+.pro_detail {
+	width:780px;
 	height:auto;
-	overflow:hidden; 
+	overflow:hidden;
 	padding:10px;
 }
 /*left-hand side css*/
-.pro_detail_left { 
+.pro_detail_left {
 	width:380px;
 	float:left;
 	overflow:hidden;
@@ -36,22 +36,22 @@
   border-bottom: 2px dashed;
 }
 
-.pro_detail_left span { 
+.pro_detail_left span {
 	display:block;
 	text-align:center;
 	padding-top:10px;
 	padding-bottom:10px;
 	width:310px;
-	clear:both; 
+	clear:both;
 }
-.pro_detail_left span a:hover{ 
+.pro_detail_left span a:hover{
 	text-decoration:none;
 }
 
 /*right-hand side css*/
-.pro_detail_right { 
-	width:380px;  
-	float:left; 
+.pro_detail_right {
+	width:380px;
+	float:left;
 	margin:10px;
 }
 
@@ -106,4 +106,3 @@
   text-shadow: 2px 2px 3px #666;
   transition: all .4s;
 }
-
