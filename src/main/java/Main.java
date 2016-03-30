@@ -3,7 +3,7 @@ import spark.template.freemarker.FreeMarkerEngine;
 import spark.ModelAndView;
 import static spark.Spark.get;
 import routes.*;
-import user.*;
+import User.*;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
 
