@@ -127,7 +127,7 @@
     $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "https://desolate-thicket-4106.herokuapp.com/api/productXML",
+        url: "Item.xml",
         dataType: "xml",
         success: xmlParser
     });

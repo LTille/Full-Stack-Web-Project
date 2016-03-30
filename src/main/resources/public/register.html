@@ -2,9 +2,9 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.3.1.min.js"></script>
     <script src="js/market.js"></script>
-    <script src="js/JSON.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
     <title> Flea Market</title>
     <script>
    $(function(){
@@ -13,21 +13,26 @@
 
    $(function(){
         $("#submit").click(function(){
-         //var json = ConvertFormToJSON($('#regForm'));
-        // var send = $('#regForm').serializeJSON();
-         console.log(send);
-         $.ajax({
-         type: 'POST',
-         url: '/regProcess',
-         data: '{"name":"Tillie","email":"tingli@163.com","password":"123","cpassword":"123"}',
-         error: function(xhr, error) {
-            alert('Error!  Status = ' + xhr.status + ' Message = ' + error);},
-         success: function(data) { alert(data+"Register successfully"); },
-         contentType: "application/json",
-         dataType: 'json'
-     });
-      return false;
-     });
+      // '{"username":"ting","email":"tingli1101376@gmail.com","password":"123",cpassword:"123"}',
+        var username = $("#username").val();
+        var email = $("#email").val();
+        var password = $("#password").val();
+        var cpassword =$("#cpassword").val();
+        var send = JSON.stringify({"username":username,"email":email,"password":password,"cpassword":password});
+              $.ajax({
+                  contentType:'application/json',
+                  url: '/regProcess',
+                  type: "POST",
+                  datatype: "json",
+                  data: send,
+                  success: function(data) {
+                      alert("Register successfully.");
+                      //window.location.href='/index.html';
+
+                  }
+              });
+                    return false;
+          });
    });
    </script>
 </head>
